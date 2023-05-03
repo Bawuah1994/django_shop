@@ -1,0 +1,26 @@
+  {% extends 'shop/base.html' %}
+  {% block content %}
+    <h1>Product List</h1>
+    <p>{{ deleted }} </p>
+    <p><a href="{% url 'shop:product_new' %}" class="btn btn-outline-primary">Add a new product</a></p>
+    
+
+    <div class="container">
+      <div class="row">
+        {% for product in products %}
+          <div class="col d-flex" style="margin-bottom: 10px !important">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">This is product {{ product.id }}</h5>
+                <p class="card-text"> <br> Costs £
+                  {% comment %} <p class="card-text">{{product.name }} <br> Costs £ {% endcomment %}
+                  {{product.price}} <br> Was added on: {{ product.created_date }} </p>
+                <a href="{% url 'shop:product_detail' id=product.id %}" class="btn btn-primary">View More</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% endblock %}
