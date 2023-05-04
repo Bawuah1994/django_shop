@@ -25,7 +25,10 @@ def signup(request):
 def dashboard(request):
     user = request.user
     if user.is_authenticated & user.is_staff:
-        return render(request, 'shop/dashboard.html')
+        orders = Order.objects.all()
+        products = Product.objects.all()
+        customers = Customer.objects.all()
+        return render(request, 'shop/dashboard.html', {'products' : products, 'orders': orders, 'customers': customers })
     else:
         return redirect('shop:login')
 
