@@ -2,10 +2,34 @@
   {% block content %}
     <h1>Order List</h1>
     
-    {% for order in orders %}
-    <p>This is order <b> <a href="{% url 'shop:order_detail' id=order.id %}">{{order.id }}</a></b> for
-       {{order.customer.id}}. The order was placed on: {{ order.created_date }} 
-    </p>
-    {% endfor %}
+    <table id="example" class="display" style="width:100%">
+      <thead>
+          <tr>
+              <th>No. #</th>
+              <!-- <th>Cutomer</th> -->
+              <th>Created At</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+          <tr>
+              <td>{{ order.id }}</td>
+              <!-- <td>{{customer.user.first_name}} {{customer.user.last_name}}</td> -->
+              <td>{{ order.created_date }}</td>
+              <td><a href="{% url 'shop:order_detail' id=order.id %}" class="btn btn-primary">View More</a></td>
+          </tr>
+          {% endfor %}
+
+      </tbody>
+      <tfoot>
+          <tr>
+              <th>No. #</th>
+              <!-- <th>Cutomer</th> -->
+              <th>Created At</th>
+              <th>Action</th>
+          </tr>
+      </tfoot>
+  </table>
 
     {% endblock %}
