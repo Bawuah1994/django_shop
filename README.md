@@ -13,9 +13,9 @@ After you clone or download the repository use these commands to set things up a
     python manage.py migrate
 
 
-To run all the necessary commands for the codio/linux environment, we can run the `build.sh` file as follows
-    chmod +x build.sh
-    ./build.sh
+To run all the necessary commands for the codio/linux environment, we can run the `build.sh` file as follows:
+        chmod +x build.sh
+        ./build.sh
     
    
 This app uses Faker to generate customer and product details in the 'shop/management/commands/populate_tables.py' file. Go to https://faker.readthedocs.io/en/stable/providers.html and look through the options for Standard Providers to see if you want to change any details in values used.
