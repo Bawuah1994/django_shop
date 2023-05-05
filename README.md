@@ -14,6 +14,7 @@ After you clone or download the repository use these commands to set things up a
 
 
 To run all the necessary commands for the codio/linux environment, we can run the `build.sh` file as follows:
+        
         chmod +x build.sh
         ./build.sh
     
