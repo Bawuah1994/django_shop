@@ -7,11 +7,17 @@ After you clone or download the repository use these commands to set things up a
     python3 -m venv .venv # this creates the virtual environment for you
     source .venv/bin/activate # this activates the virtual environment, this is for linux and mac
     .venv\Scripts\activate # this activates the virtual environment, this is for windows
-    pip install --upgrade pip [ this is optional]  # this installs pip, and upgrades it if required.
+    pip install --upgrade pip [ this is optional]  # this installs pip, and upgrades it if required.    
     pip install django
     pip install faker
     python manage.py migrate
 
+
+To run all the necessary commands for the codio/linux environment, we can run the `build.sh` file as follows
+    chmod +x build.sh
+    ./build.sh
+    
+   
 This app uses Faker to generate customer and product details in the 'shop/management/commands/populate_tables.py' file. Go to https://faker.readthedocs.io/en/stable/providers.html and look through the options for Standard Providers to see if you want to change any details in values used.
 
 You should now be able to populate the tables with the command:
